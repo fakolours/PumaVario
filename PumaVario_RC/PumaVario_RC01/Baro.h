@@ -28,14 +28,14 @@ void baro_loop()
       if (result!=0)
       {
         A = bmp.altitude(P, P0);
-        Serial.println(A);
+        Serial.print(A);
         float estimated_altitude = pressureKalmanFilter.updateEstimate(A);
         //Serial.print("T = \t");Serial.print(T,2); Serial.print(" degC\t");
         //Serial.print("P = \t");Serial.print(P,2); Serial.print(" mBar\t");
         //Serial.print("A = \t");
-        //Serial.println(A,2);
-        //Serial.print(" ");
-        //Serial.println(estimated_altitude); 
+        //Serial.print(A,2);
+        Serial.print(" ");
+        Serial.println(estimated_altitude); 
         //Serial.println(" m");
 
         unsigned long baro_current_millis = millis();
@@ -49,12 +49,12 @@ void baro_loop()
             float vario = new_altitude - estimated_altitude;
             vario = vario * 50;
             vario_kalman = varioKalmanFilter.updateEstimate(vario);// * 40;
-            
+            /*
             Serial.print("alti: ");
             Serial.print(bmp.altitude(P,P0));           
             Serial.print("  vario: ");
             Serial.println(new_altitude);
-            
+            */
         }
         
       }
