@@ -49,12 +49,12 @@ void baro_loop()
             float vario = new_altitude - estimated_altitude;
             vario = vario * 50;
             vario_kalman = varioKalmanFilter.updateEstimate(vario);// * 40;
-            /*
+            
             Serial.print("alti: ");
-            Serial.print(bmp.altitude(P,P0) - 434);           
+            Serial.print(bmp.altitude(P,P0));           
             Serial.print("  vario: ");
-            Serial.println(vario_kalman);
-            */
+            Serial.println(new_altitude);
+            
         }
         
       }

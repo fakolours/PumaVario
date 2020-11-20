@@ -19,15 +19,15 @@ void setup()
 
     Wire.begin();
 
-    sd_setup();
+    //sd_setup();
 
-    gps_setup();
+    //gps_setup();
 
-    display_setup();
+    //display_setup();
 
     baro_setup();
 
-    mpu_setup();
+    //mpu_setup();
 
     delay(500);
     display.fillScreen(GxEPD_WHITE);
